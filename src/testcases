@@ -1,0 +1,39 @@
+1. ## Valid registration
+Go to https://e-catalog.co.uk/
+Tap to Log in button
+Tap to Register button
+Fill fields Name, Email, Password, and tap to Register button
+Tap to Confirm button
+Expected result: User is registered and redirected to the Home page
+Post-condition: Logout
+
+2. ## Valid login
+Go to https://e-catalog.co.uk/
+Tap to Log in button
+Tap to Email button
+Fill field Login and Password with valid credentials, and tap to Login button
+Expected result: User is logged in and redirected to the Home page
+Post-condition: Logout
+
+3. ## Invalid login
+Go to https://e-catalog.co.uk/
+Tap to Log in button
+Tap to Email button
+Fill field Login and Password with invalid credentials, and tap to Login button
+Expected result: User is not logged in and error message is displayed
+
+4. ## Search for product
+Pre-condition: User is logged in
+Fill field Search with valid product name, and tap to Search button
+Expected result: Product is found and displayed in the search results
+Post-condition: Logout
+
+5. ## Add product to bookmark list
+Pre-condition: User is logged in
+Fill field Search with valid product name, and tap to Search button
+Tap to first product in the search results
+Tap to My lists button
+Tap to Nickname button
+Expected result: Product is added to the bookmark list
+Post-condition: Logout
+
