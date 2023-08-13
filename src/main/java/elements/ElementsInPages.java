@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ElementsInPages {
-    Logger logger = Logger.getLogger(getClass());
+    protected Logger logger = Logger.getLogger(getClass());
     protected WebDriver webDriver;
     protected WebDriverWait webDriverWait10, webDriverWait15;
 

@@ -1,0 +1,5 @@
+## Registration button
+//div[@class='signin-with signin-with-reg']
+
+## Login with Email button
+//div[@class='signin-with signin-with-ek']
