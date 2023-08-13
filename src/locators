@@ -19,4 +19,21 @@
 ## Logout button
 //em[@title='Log out']
 
+## User profile button
+//a[@class='info-nick']
+
+## Input NameRegister
+//input[@name='p_[NikName]']
+
+## Input EmailRegister
+//input[@name='p_[EMail]']
+
+## Input PasswordRegister
+//input[@name='p_[PW0]']
+
+## Registration Confirm button
+//button[@id='hgvjszriy9r']
+
+
+
 
