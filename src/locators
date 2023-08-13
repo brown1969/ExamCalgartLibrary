@@ -1,5 +1,22 @@
 ## Registration button
 //div[@class='signin-with signin-with-reg']
 
+## Login button
+//em[text()='Log in']
+
 ## Login with Email button
 //div[@class='signin-with signin-with-ek']
+
+## Input Login
+//input[@name='l_']
+
+## Input Password
+//input[@name='pw_']
+
+## LoginSecond button
+//button[text()='Log in']
+
+## Logout button
+//em[@title='Log out']
+
+

@@ -1,11 +1,11 @@
 package pages;
 
-import elements.ElementsInPages;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 public class ParentPage extends ElementsInPages {
 
+    final String BASE_URL = "https://e-catalog.co.uk";
 
     public ParentPage(WebDriver webDriver) {
         super(webDriver);
