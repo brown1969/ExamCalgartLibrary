@@ -13,7 +13,7 @@ public class RegistrationTest extends baseTest.BaseTest{
     final static String ERROR_EMAIL = "\"e-mail\" field contains invalid characters";
     final static String ERROR_PASSWORD = "\"Password\" field contains invalid characters";
     final static String ERROR_USERNAME_EMPTY = "Fill in \"Name\" field";
-    final static String ERROR_EMAIL_EMPTY = "Fill in \"e-mail\" field";
+    final static String ERROR_EMAIL_EMPTY = "Fill in \"Email\" field";
     final static String ERROR_PASSWORD_EMPTY = "Fill in \"Password\" field";
     final static String ERROR_INCORRECT_EMAIL = "Incorrect \"e-mail\"";
     final static String SEMICOLON = ";";
@@ -35,7 +35,7 @@ public class RegistrationTest extends baseTest.BaseTest{
 
 public Object[][] parametersForCheckErrorsTest() {
         return new Object[][]{
-//               {"", "", "", ERROR_USERNAME_EMPTY + SEMICOLON + ERROR_EMAIL_EMPTY + SEMICOLON + ERROR_PASSWORD_EMPTY},
+              {"", "", "", ERROR_USERNAME_EMPTY + SEMICOLON + ERROR_EMAIL_EMPTY + SEMICOLON + ERROR_PASSWORD_EMPTY},
                 {"%^^&", "%$%^", "^^&*", ERROR_USERNAME + SEMICOLON + ERROR_EMAIL + SEMICOLON + ERROR_PASSWORD},
 
 

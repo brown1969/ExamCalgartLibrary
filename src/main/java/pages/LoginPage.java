@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.ArrayList;
 import java.util.List;
 
+import static data.TestData.*;
+
 public class LoginPage extends ParentPage {
 
     @FindBy(xpath = "//em[text()='Log in']")
@@ -52,7 +54,8 @@ public class LoginPage extends ParentPage {
 
     final String listErrorsMessagesLocator = "//div[@class='ek-form-text']";
 
-    public LoginPage(WebDriver webDriver) { super(webDriver);
+    public LoginPage(WebDriver webDriver) {
+        super(webDriver);
     }
 
     public void openLoginPage() {
@@ -71,7 +74,7 @@ public class LoginPage extends ParentPage {
         clickOnElement(buttonSignInWithEmail);
     }
 
-        public void enterTextIntoInputUserNameOrEmail(String userName) {
+    public void enterTextIntoInputUserNameOrEmail(String userName) {
         enterTextIntoInput(inputUserNameOrEmail, userName);
     }
 
@@ -111,6 +114,28 @@ public class LoginPage extends ParentPage {
         clickOnElement(buttonRegisterConfirm);
     }
 
+
+    public void loginWithValidCreds() {
+        openLoginPage();
+        clickOnButtonLogin();
+        clickOnButtonSignInWithEmail();
+        enterTextIntoInputUserNameOrEmail(LOGIN_DEFAULT);
+        enterTextIntoInputPassword(PASSWORD_DEFAULT);
+        clickOnButtonSecondLogin();
+
+    }
+
+    public void loginWithInValidCreds() {
+        openLoginPage();
+        clickOnButtonLogin();
+        clickOnButtonSignInWithEmail();
+        enterTextIntoInputUserNameOrEmail(LOGIN_INVALID);
+        enterTextIntoInputPassword(PASSWORD_INVALID);
+        clickOnButtonSecondLogin();
+
+    }
+
+
     public LoginPage checkErrorsMessages(String expectedMessages) {
         // error1;error2 -> [error1, error2]
         String[] errors = expectedMessages.split(";");
@@ -146,7 +171,6 @@ public class LoginPage extends ParentPage {
     private List<WebElement> getListOfErrors() {
         return webDriver.findElements(By.xpath(listErrorsMessagesLocator));
     }
-
 
 
 //    public LoginPage checkLoginErrors(String expectedMessages) {
