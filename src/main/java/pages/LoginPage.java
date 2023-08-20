@@ -57,6 +57,7 @@ public class LoginPage extends ParentPage {
     private WebElement buttonPhones;
 
     @FindBy(xpath = "//a[text()='Gadgets']")
+//    @FindBy(xpath = "//a[@href='/k119.htm']")
     private WebElement hoverGadgets;
 
     final String listErrorsMessagesLocator = "//div[@class='ek-form-text']";
@@ -131,6 +132,7 @@ public class LoginPage extends ParentPage {
     }
 
     public void hoverOnGadgets() {
+       webDriverWait15.until(ExpectedConditions.visibilityOf(hoverGadgets));
         hoverOnElement(hoverGadgets);
     }
 

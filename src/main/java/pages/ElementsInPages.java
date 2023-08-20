@@ -2,6 +2,7 @@ package pages;
 
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -74,7 +75,15 @@ public class ElementsInPages {
         Assert.fail("Can not work with element" + e);
     }
 
-
+    public void tapOnEnterKey (WebElement element) {
+        try{
+        webDriverWait10.until(ExpectedConditions.elementToBeClickable(element));
+        element.sendKeys(Keys.ENTER);
+        logger.info("Enter key was clicked");
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+        }
+    }
 
 
 }

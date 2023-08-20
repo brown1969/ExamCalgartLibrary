@@ -24,16 +24,19 @@ Expected result: User is not logged in and error message is displayed
 
 4. ## Search for product
 Pre-condition: User is logged in
-Fill field Search with valid product name, and tap to Search button
+Choose the Gadgets -> Phones category
+Fill field Search with valid product name, and tap Enter button
 Expected result: Product is found and displayed in the search results
 Post-condition: Logout
 
 5. ## Add product to bookmark list
-Pre-condition: User is logged in
-Fill field Search with valid product name, and tap to Search button
-Tap to first product in the search results
-Tap to My lists button
+Pre-condition: User is logged in, search for product was performed
+
+Tap to first row in the search results
+Tap to add to list button
 Tap to Nickname button
 Expected result: Product is added to the bookmark list
-Post-condition: Logout
+Post-condition:
+    Delete product from bookmark list
+    Logout
 

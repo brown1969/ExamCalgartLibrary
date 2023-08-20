@@ -3,6 +3,7 @@ package searchTest;
 import baseTest.BaseTest;
 import org.junit.Test;
 
+import static data.TestData.PHONE_TEST_NAME;
 
 
 public class SearchPhoneTest extends BaseTest {
@@ -15,6 +16,9 @@ public class SearchPhoneTest extends BaseTest {
     pageProvider.getLoginPage().hoverOnPhones();
     pageProvider.getLoginPage().clickOnPhonesButton();
     pageProvider.getPhonesListPage().checkIsButtonOnlyMobilePhonesVisible();
+    pageProvider.getPhonesListPage().enterTextIntoInputSearch(PHONE_TEST_NAME);
+    pageProvider.getPhonesListPage().tapOnEnterKey();
+    pageProvider.getPhonesListPage().checkIsSearchPhoneNameVisible();
 
 
     }
