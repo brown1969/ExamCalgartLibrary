@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -52,6 +53,12 @@ public class LoginPage extends ParentPage {
     @FindBy(xpath = "//button[text()='Register']")
     private WebElement buttonRegisterConfirm;
 
+    @FindBy(xpath = "//span[text()='Phones']")
+    private WebElement buttonPhones;
+
+    @FindBy(xpath = "//a[text()='Gadgets']")
+    private WebElement hoverGadgets;
+
     final String listErrorsMessagesLocator = "//div[@class='ek-form-text']";
 
     public LoginPage(WebDriver webDriver) {
@@ -86,6 +93,10 @@ public class LoginPage extends ParentPage {
         checkElementNotDisplayed(buttonLogIn);
     }
 
+    public void checkLogInButtonIsDisplayed() {
+        checkElementDisplayed(buttonLogIn);
+    }
+
     public void checkLogOutButtonIsDisplayed() {
         checkElementDisplayed(buttonLogOut);
     }
@@ -114,6 +125,14 @@ public class LoginPage extends ParentPage {
         clickOnElement(buttonRegisterConfirm);
     }
 
+    public void hoverOnPhones() {
+        webDriverWait10.until(ExpectedConditions.visibilityOf(buttonPhones));
+        hoverOnElement(buttonPhones);
+    }
+
+    public void hoverOnGadgets() {
+        hoverOnElement(hoverGadgets);
+    }
 
     public void loginWithValidCreds() {
         openLoginPage();
@@ -173,41 +192,29 @@ public class LoginPage extends ParentPage {
     }
 
 
-//    public LoginPage checkLoginErrors(String expectedMessages) {
-//        String[] errors = expectedMessages.split(";");
-//        webDriverWait10.until(
-//                ExpectedConditions.numberOfElementsToBe(
-//                        By.xpath(loginErrorLocator), errors.length));
-//        Util.waitABit(1);
-//        Assert.assertEquals("Number of elements ", errors.length, getLoginErrors().size());
-//
-//        ArrayList actualTextFromErrors = new ArrayList();
-//        for (WebElement element : getLoginErrors()) {
-//            actualTextFromErrors.add(element.getText());
-//
-//        }
-//
-//        SoftAssertions softAssertions = new SoftAssertions(); // об'єкт для накоплювальоних перевірок
-//        for (int i = 0; i < errors.length; i++) {
-//
-//            softAssertions.assertThat(errors[i])
-//                    .as("Error " + i)
-//                    .isIn(actualTextFromErrors);
-//
-//        }
-//
-//
-//        softAssertions.assertAll(); // перевірка всіх накоплювальних перевірок
-//
-//
-//        return this;
-//    }
-//
-//    private List<WebElement> getLoginErrors() {
-//        return webDriver.findElements(By.xpath(loginErrorLocator));
-//    }
-//
-//
+    public void hoverOnElement(WebElement element) {
+        try {
+            Actions actions = new Actions(webDriver);
+            actions.moveToElement(element).perform();
+            logger.info("Hover on element " + getElementName(element));
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+        }
+    }
+
+    private String getElementName(WebElement element) {
+        try {
+            return element.getAccessibleName();
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+
+    public PhonesListPage clickOnPhonesButton() {
+        clickOnElement(buttonPhones);
+        return new PhonesListPage(webDriver);
+    }
 
 
 }

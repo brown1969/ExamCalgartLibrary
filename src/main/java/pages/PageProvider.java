@@ -13,4 +13,8 @@ public class PageProvider {
         return new LoginPage(webDriver);
     }
 
+    public PhonesListPage getPhonesListPage() {
+        return new PhonesListPage(webDriver);
+    }
+
 }
