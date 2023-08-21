@@ -13,4 +13,16 @@ public class PageProvider {
         return new LoginPage(webDriver);
     }
 
+    public PhonesListPage getPhonesListPage() {
+        return new PhonesListPage(webDriver);
+    }
+
+    public iPhoneSearchPage getIPhoneSearchPage() {
+        return new iPhoneSearchPage(webDriver);
+    }
+
+    public iPhone13Page getIPhone13Page() {
+        return new iPhone13Page(webDriver);
+    }
+
 }
