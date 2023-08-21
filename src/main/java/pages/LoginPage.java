@@ -127,12 +127,22 @@ public class LoginPage extends ParentPage {
     }
 
     public void hoverOnPhones() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         webDriverWait10.until(ExpectedConditions.visibilityOf(buttonPhones));
         hoverOnElement(buttonPhones);
     }
 
     public void hoverOnGadgets() {
-       webDriverWait15.until(ExpectedConditions.visibilityOf(hoverGadgets));
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        webDriverWait15.until(ExpectedConditions.visibilityOf(hoverGadgets));
         hoverOnElement(hoverGadgets);
     }
 

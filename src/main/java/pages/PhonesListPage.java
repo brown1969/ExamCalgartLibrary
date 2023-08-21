@@ -37,4 +37,11 @@ public class PhonesListPage extends ParentPage{
         tapOnEnterKey(inputSearch);
     }
 
+
+
+    public iPhoneSearchPage clickOnSearchIPhoneName() {
+        tapOnEnterKey(inputSearch);
+        return new iPhoneSearchPage(webDriver);
+    }
+
 }

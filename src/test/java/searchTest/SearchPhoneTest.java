@@ -18,7 +18,7 @@ public class SearchPhoneTest extends BaseTest {
     pageProvider.getPhonesListPage().checkIsButtonOnlyMobilePhonesVisible();
     pageProvider.getPhonesListPage().enterTextIntoInputSearch(PHONE_TEST_NAME);
     pageProvider.getPhonesListPage().tapOnEnterKey();
-    pageProvider.getPhonesListPage().checkIsSearchPhoneNameVisible();
+    pageProvider.getIPhoneSearchPage().checkIsSearchPhoneNameVisible();
 
 
     }
