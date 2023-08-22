@@ -4,9 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class PhonesListPage extends ParentPage{
+public class PhonesListPage extends ParentPage {
     public PhonesListPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -36,7 +35,6 @@ public class PhonesListPage extends ParentPage{
     public void tapOnEnterKey() {
         tapOnEnterKey(inputSearch);
     }
-
 
 
     public iPhoneSearchPage clickOnSearchIPhoneName() {

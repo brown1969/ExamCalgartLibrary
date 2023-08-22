@@ -21,7 +21,6 @@ public class AddToBookmarkListTest extends BaseTest {
         pageProvider.getIPhone13Page().checkIsButtonAddToListVisible();
         pageProvider.getIPhone13Page().clickOnButtonAddToList();
         pageProvider.getIPhone13Page().checkIsButtonMyListsVisible();
-        pageProvider.getIPhone13Page().clickOnButtonMyLists();
         pageProvider.getIPhone13Page().clickOnButtonBookmarks();
         pageProvider.getIPhone13Page().checkIsButtonAddToListVisible();
     }

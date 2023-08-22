@@ -31,8 +31,7 @@
 ## Input PasswordRegister
 //input[@name='p_[PW0]']
 
-## Registration Confirm button
-//button[@id='hgvjszriy9r']
+
 
 
 
