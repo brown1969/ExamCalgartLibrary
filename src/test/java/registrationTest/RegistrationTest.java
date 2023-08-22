@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(JUnitParamsRunner.class)
 
-public class RegistrationTest extends baseTest.BaseTest{
+public class RegistrationTest extends baseTest.BaseTest {
 
     final static String ERROR_USERNAME = "\"Name\" field contains invalid characters";
     final static String ERROR_EMAIL = "\"e-mail\" field contains invalid characters";
@@ -20,7 +20,7 @@ public class RegistrationTest extends baseTest.BaseTest{
     final static String COMMA = ",";
 
     @Test
-@Parameters(method = "parametersForCheckErrorsTest")
+    @Parameters(method = "parametersForCheckErrorsTest")
     public void checkErrorsTest(String name, String email, String password, String expectedMessages) {
         pageProvider.getLoginPage().openLoginPage();
         pageProvider.getLoginPage().clickOnButtonLogin();
@@ -33,15 +33,15 @@ public class RegistrationTest extends baseTest.BaseTest{
 
     }
 
-public Object[][] parametersForCheckErrorsTest() {
+    public Object[][] parametersForCheckErrorsTest() {
         return new Object[][]{
-              {"", "", "", ERROR_USERNAME_EMPTY + SEMICOLON + ERROR_EMAIL_EMPTY + SEMICOLON + ERROR_PASSWORD_EMPTY},
+                {"", "", "", ERROR_USERNAME_EMPTY + SEMICOLON + ERROR_EMAIL_EMPTY + SEMICOLON + ERROR_PASSWORD_EMPTY},
                 {"%^^&", "%$%^", "^^&*", ERROR_USERNAME + SEMICOLON + ERROR_EMAIL + SEMICOLON + ERROR_PASSWORD},
 
 
         };
 
 
-}
+    }
 
 }

@@ -57,7 +57,6 @@ public class LoginPage extends ParentPage {
     private WebElement buttonPhones;
 
     @FindBy(xpath = "//a[text()='Gadgets']")
-//    @FindBy(xpath = "//a[@href='/k119.htm']")
     private WebElement hoverGadgets;
 
     final String listErrorsMessagesLocator = "//div[@class='ek-form-text']";
@@ -168,13 +167,11 @@ public class LoginPage extends ParentPage {
 
 
     public LoginPage checkErrorsMessages(String expectedMessages) {
-        // error1;error2 -> [error1, error2]
         String[] errors = expectedMessages.split(";");
-        // wait until number of errors will be expected
         webDriverWait10.until(
                 ExpectedConditions.numberOfElementsToBe(
                         By.xpath(listErrorsMessagesLocator), errors.length));
-        Util.waitABit(1); // wait until all errors will be visible
+        Util.waitABit(1);
         Assert.assertEquals("Number of elements ", errors.length, getListOfErrors().size());
 
         ArrayList actualTextFromErrors = new ArrayList();

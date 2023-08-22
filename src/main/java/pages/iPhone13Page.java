@@ -3,8 +3,9 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class iPhone13Page extends ParentPage{
+public class iPhone13Page extends ParentPage {
     public iPhone13Page(WebDriver webDriver) {
         super(webDriver);
     }
@@ -19,6 +20,7 @@ public class iPhone13Page extends ParentPage{
     private WebElement buttonBookmarks;
 
     public void checkIsButtonAddToListVisible() {
+        webDriverWait15.until(ExpectedConditions.visibilityOf(buttonAddToList));
         checkElementDisplayed(buttonAddToList);
     }
 
@@ -28,6 +30,7 @@ public class iPhone13Page extends ParentPage{
 
 
     public void checkIsButtonMyListsVisible() {
+        webDriverWait15.until(ExpectedConditions.visibilityOf(buttonMyLists));
         checkElementDisplayed(buttonMyLists);
     }
 

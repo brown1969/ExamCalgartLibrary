@@ -11,14 +11,14 @@ public class SearchPhoneTest extends BaseTest {
     @Test
     public void searchPhone() {
 
-    pageProvider.getLoginPage().loginWithValidCreds();
-    pageProvider.getLoginPage().hoverOnGadgets();
-    pageProvider.getLoginPage().hoverOnPhones();
-    pageProvider.getLoginPage().clickOnPhonesButton();
-    pageProvider.getPhonesListPage().checkIsButtonOnlyMobilePhonesVisible();
-    pageProvider.getPhonesListPage().enterTextIntoInputSearch(PHONE_TEST_NAME);
-    pageProvider.getPhonesListPage().tapOnEnterKey();
-    pageProvider.getIPhoneSearchPage().checkIsSearchPhoneNameVisible();
+        pageProvider.getLoginPage().loginWithValidCreds();
+        pageProvider.getLoginPage().hoverOnGadgets();
+        pageProvider.getLoginPage().hoverOnPhones();
+        pageProvider.getLoginPage().clickOnPhonesButton();
+        pageProvider.getPhonesListPage().checkIsButtonOnlyMobilePhonesVisible();
+        pageProvider.getPhonesListPage().enterTextIntoInputSearch(PHONE_TEST_NAME);
+        pageProvider.getPhonesListPage().tapOnEnterKey();
+        pageProvider.getIPhoneSearchPage().checkIsSearchPhoneNameVisible();
 
 
     }

@@ -34,7 +34,6 @@ Pre-condition: User is logged in, search for product was performed
 
 Tap to first row in the search results
 Tap to add to list button
-Tap to Nickname button
 Expected result: Product is added to the bookmark list
 Post-condition:
     Delete product from bookmark list
