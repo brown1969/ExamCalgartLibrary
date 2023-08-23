@@ -9,20 +9,12 @@ public class AddToBookmarkListTest extends BaseTest {
 
     @Test
     public void addToBookmarkList() {
-        pageProvider.getLoginPage().loginWithValidCreds();
-        pageProvider.getLoginPage().hoverOnGadgets();
-        pageProvider.getLoginPage().hoverOnPhones();
-        pageProvider.getLoginPage().clickOnPhonesButton();
-        pageProvider.getPhonesListPage().checkIsButtonOnlyMobilePhonesVisible();
-        pageProvider.getPhonesListPage().enterTextIntoInputSearch(PHONE_TEST_NAME);
-        pageProvider.getPhonesListPage().tapOnEnterKey();
-        pageProvider.getIPhoneSearchPage().checkIsSearchPhoneNameVisible();
-        pageProvider.getIPhoneSearchPage().clickOnSearchIPhone13();
-        pageProvider.getIPhone13Page().checkIsButtonAddToListVisible();
-        pageProvider.getIPhone13Page().clickOnButtonAddToList();
-        pageProvider.getIPhone13Page().checkIsButtonMyListsVisible();
-        pageProvider.getIPhone13Page().clickOnButtonBookmarks();
-        pageProvider.getIPhone13Page().checkIsButtonAddToListVisible();
+        pageProvider.getLoginPage().loginWithValidCreds().hoverOnGadgets().hoverOnPhones().clickOnPhonesButton()
+                .checkIsButtonOnlyMobilePhonesVisible().enterTextIntoInputSearch(PHONE_TEST_NAME).tapOnEnterKey()
+                .checkIsSearchPhoneNameVisible().clickOnSearchIPhone13().checkIsButtonAddToListVisible().clickOnButtonAddToList()
+                .checkIsButtonMyListsVisible().clickOnButtonBookmarks().checkIsButtonAddToListVisible();
+
+
     }
 
 }

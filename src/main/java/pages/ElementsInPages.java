@@ -5,6 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,7 +40,7 @@ public class ElementsInPages {
         try {
             webDriverWait10.until(ExpectedConditions.elementToBeClickable(element));
             element.click();
-            logger.info("Element was clicked");
+            logger.info("Element was clicked " + getElementName(element));
         } catch (Exception e) {
             printErrorAndStopTest(e);
         }
@@ -50,9 +51,9 @@ public class ElementsInPages {
 
             boolean state = element.isDisplayed();
             if (state) {
-                logger.info("Element is displayed");
+                logger.info("Element is displayed " + getElementName(element));
             } else {
-                logger.info("Element is not displayed");
+                logger.info("Element is not displayed " + getElementName(element));
             }
             return state;
         } catch (Exception e) {
@@ -82,6 +83,24 @@ public class ElementsInPages {
             logger.info("Enter key was clicked");
         } catch (Exception e) {
             printErrorAndStopTest(e);
+        }
+    }
+
+    public void hoverOnElement(WebElement element) {
+        try {
+            Actions actions = new Actions(webDriver);
+            actions.moveToElement(element).perform();
+            logger.info("Hover on element " + getElementName(element));
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
+        }
+    }
+
+    private String getElementName(WebElement element) {
+        try {
+            return element.getAccessibleName();
+        } catch (Exception e) {
+            return "";
         }
     }
 

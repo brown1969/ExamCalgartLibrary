@@ -14,9 +14,10 @@ public class iPhoneSearchPage extends ParentPage {
     private WebElement searchPhoneName;
 
 
-    public void checkIsSearchPhoneNameVisible() {
+    public iPhoneSearchPage checkIsSearchPhoneNameVisible() {
         webDriverWait10.until(ExpectedConditions.visibilityOf(searchPhoneName));
         checkElementDisplayed(searchPhoneName);
+        return this;
     }
 
 
