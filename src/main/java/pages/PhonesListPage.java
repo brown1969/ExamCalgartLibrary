@@ -19,27 +19,26 @@ public class PhonesListPage extends ParentPage {
     @FindBy(xpath = "//span[text()='Apple iPhone 13 128']")
     private WebElement searchPhoneName;
 
-    public void checkIsButtonOnlyMobilePhonesVisible() {
+    public PhonesListPage checkIsButtonOnlyMobilePhonesVisible() {
         checkElementDisplayed(buttonOnlyMobilePhones);
+        return this;
     }
 
-    public void enterTextIntoInputSearch(String phoneName) {
+    public PhonesListPage enterTextIntoInputSearch(String phoneName) {
         enterTextIntoInput(inputSearch, phoneName);
+        return this;
     }
 
-    public void checkIsSearchPhoneNameVisible() {
+    public PhonesListPage checkIsSearchPhoneNameVisible() {
         webDriverWait10.until(ExpectedConditions.visibilityOf(searchPhoneName));
         checkElementDisplayed(searchPhoneName);
+        return this;
     }
 
-    public void tapOnEnterKey() {
-        tapOnEnterKey(inputSearch);
-    }
-
-
-    public iPhoneSearchPage clickOnSearchIPhoneName() {
+    public iPhoneSearchPage tapOnEnterKey() {
         tapOnEnterKey(inputSearch);
         return new iPhoneSearchPage(webDriver);
     }
+
 
 }

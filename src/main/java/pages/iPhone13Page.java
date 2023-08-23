@@ -19,19 +19,22 @@ public class iPhone13Page extends ParentPage {
     @FindBy(xpath = "//b[text()='Bookmarks']")
     private WebElement buttonBookmarks;
 
-    public void checkIsButtonAddToListVisible() {
+    public iPhone13Page checkIsButtonAddToListVisible() {
         webDriverWait15.until(ExpectedConditions.visibilityOf(buttonAddToList));
         checkElementDisplayed(buttonAddToList);
+        return this;
     }
 
-    public void clickOnButtonAddToList() {
+    public iPhone13Page clickOnButtonAddToList() {
         clickOnElement(buttonAddToList);
+        return this;
     }
 
 
-    public void checkIsButtonMyListsVisible() {
+    public iPhone13Page checkIsButtonMyListsVisible() {
         webDriverWait15.until(ExpectedConditions.visibilityOf(buttonMyLists));
         checkElementDisplayed(buttonMyLists);
+        return this;
     }
 
     public void clickOnButtonMyLists() {
@@ -39,7 +42,8 @@ public class iPhone13Page extends ParentPage {
     }
 
 
-    public void clickOnButtonBookmarks() {
+    public iPhone13Page clickOnButtonBookmarks() {
         clickOnElement(buttonBookmarks);
+        return this;
     }
 }

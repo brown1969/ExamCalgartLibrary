@@ -6,7 +6,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -125,7 +124,7 @@ public class LoginPage extends ParentPage {
         clickOnElement(buttonRegisterConfirm);
     }
 
-    public void hoverOnPhones() {
+    public LoginPage hoverOnPhones() {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -133,9 +132,10 @@ public class LoginPage extends ParentPage {
         }
         webDriverWait10.until(ExpectedConditions.visibilityOf(buttonPhones));
         hoverOnElement(buttonPhones);
+        return this;
     }
 
-    public void hoverOnGadgets() {
+    public LoginPage hoverOnGadgets() {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -143,16 +143,17 @@ public class LoginPage extends ParentPage {
         }
         webDriverWait15.until(ExpectedConditions.visibilityOf(hoverGadgets));
         hoverOnElement(hoverGadgets);
+        return this;
     }
 
-    public void loginWithValidCreds() {
+    public LoginPage loginWithValidCreds() {
         openLoginPage();
         clickOnButtonLogin();
         clickOnButtonSignInWithEmail();
         enterTextIntoInputUserNameOrEmail(LOGIN_DEFAULT);
         enterTextIntoInputPassword(PASSWORD_DEFAULT);
         clickOnButtonSecondLogin();
-
+        return this;
     }
 
     public void loginWithInValidCreds() {
@@ -198,25 +199,6 @@ public class LoginPage extends ParentPage {
 
     private List<WebElement> getListOfErrors() {
         return webDriver.findElements(By.xpath(listErrorsMessagesLocator));
-    }
-
-
-    public void hoverOnElement(WebElement element) {
-        try {
-            Actions actions = new Actions(webDriver);
-            actions.moveToElement(element).perform();
-            logger.info("Hover on element " + getElementName(element));
-        } catch (Exception e) {
-            printErrorAndStopTest(e);
-        }
-    }
-
-    private String getElementName(WebElement element) {
-        try {
-            return element.getAccessibleName();
-        } catch (Exception e) {
-            return "";
-        }
     }
 
 
